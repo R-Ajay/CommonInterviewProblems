@@ -23,9 +23,28 @@ public class Pattern {
         //printPattern33(n);
         //printPattern35(n);
 
-        String name = "PROGRAM";
-        printPatternX(name);
+        String name1 = "GEEKSFORGEEKS";
+        String name2 = "PROGRAM";
+       //printPatternX(name1);
+        //printRight(name2);
 
+    }
+
+    private static void printRight(String name) {
+
+        int middle = name.length() / 2;
+        for (int row = 1; row <= name.length() ; row++) {
+            int k = middle;
+            for (int space = 1; space <= name.length() - row ; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++) {
+                k = (k == name.length()) ? 0 : k;
+                System.out.print(name.charAt(k++));
+
+            }
+            System.out.println();
+        }
     }
 
     private static void printPattern20(int n) {
