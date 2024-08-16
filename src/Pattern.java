@@ -7,7 +7,7 @@ https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-pat
 public class Pattern {
     public static void main(String[] args) {
 
-         int n = 5;
+         int n = 6;
         //printPattern2(n);
         //printPattern5(n);
         //printPattern6(n);
@@ -22,11 +22,25 @@ public class Pattern {
         //printPattern32(n);
         //printPattern33(n);
         //printPattern35(n);
+        printPattern36(6);
 
         String name1 = "GEEKSFORGEEKS";
         String name2 = "PROGRAM";
        //printPatternX(name1);
         //printRight(name2);
+
+    }
+
+    private static void printPattern36(int n) {
+     int k =n;
+        for (int row = 1; row <=n ; row++) {
+            for (int col = 1,value = row; col <=n - row + 1 ; col++) {
+                System.out.print(value + " ");
+                value = value + k--;
+            }
+            k = n;
+            System.out.println();
+        }
 
     }
 
