@@ -3,25 +3,30 @@ package Arrays;
 import java.util.Arrays;
 
 public class MoveZeros {
-
     public static void main(String[] args) {
-        int[] nums = {1, 0, 0, 0, 5, 12};
-        moveZeros(nums);
-        System.out.println(Arrays.toString(nums));
-
+        int[] arr = new int[] {1, 0, 2, 2, 2, 0, 0, 4, 5, 1};
+        moveZeros(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
-    private static void moveZeros(int[] nums) {
-        int left = 0;
-        for (int right = 0; right < nums.length; right++) {
-            if (nums[right] != 0) {
-                int temp = nums[right];
-                nums[right] = nums[left];
-                nums[left] = temp;
-                left++;
+    private static void moveZeros(int[] arr) {
+        int j = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] == 0){
+                j = i;
+                break;
             }
         }
 
+        if(j != -1){
+            for (int i = j + 1; i < arr.length; i++) {
+                if(arr[i] != 0){
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                    j++;
+                }
+            }
+        }
     }
-
 }
