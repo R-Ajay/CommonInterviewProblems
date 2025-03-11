@@ -1,4 +1,4 @@
-package Arrays;
+package TwoPointerSlidingWindow;
 
 public class MaximumConsectiveZerosWithK {
     public static void main(String[] args) {
